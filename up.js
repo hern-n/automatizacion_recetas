@@ -1,10 +1,11 @@
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 // Configura tus claves
-const SUPABASE_URL = 'https://pxglljjronhffzppedqt.supabase.co';
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4Z2xsampyb25oZmZ6cHBlZHF0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTIxNTg4NSwiZXhwIjoyMDY0NzkxODg1fQ.EjVlGO4oOfFbzz2hhJjGV-7RGzy-tkrm4f6CcPJEl-E"
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
 const STORAGE_BUCKET = 'imagenes-recetas';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -18,7 +19,7 @@ function formatearNombreCarpeta(nombre) {
     return nombreFormateado;
 }
 
-async function subirImagen(nombreReceta, filePath) {
+async function  subirImagen(nombreReceta, filePath) {
     const fileExt = path.extname(filePath);
     const fileName = path.basename(filePath, fileExt);
     const fileBuffer = fs.readFileSync(filePath);
@@ -124,7 +125,7 @@ const receta = {
         'Cuajar en una sartén por ambos lados.'
     ],
     categoria: 'Plato principal',
-    imagenes: ['./images/tortilla1.webp', './images/tortilla2.jpg'],
+    imagenes: ['./images/tortilla_de_patatas_1.jpg', './images/tortilla_de_patatas_2.jpg', './images/tortilla_de_patatas_3.jpg'],
     video: 'https://www.youtube.com/watch?v=abcd1234',
     utensilios: {
         'Espátula': 'https://example.com',

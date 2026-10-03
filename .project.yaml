@@ -1,0 +1,21 @@
+name: automatizacion_recetas
+description: >-
+  Node.js script for automating the upload of recipe images to Supabase Storage and inserting recipe data into a
+  Supabase database.
+author: Hernan Olmeda
+version: 1.0.0
+technologies:
+  - Node.js
+  - Supabase
+  - PostgreSQL
+  - pnpm
+repository: https://github.com/hern-n/automatizacion_recetas.git
+license: ISC
+tags:
+  - automation
+  - supabase
+  - nodejs
+  - script
+  - database
+  - recipes
+lastModified: '2026-06-16T18:16:28.951Z'
